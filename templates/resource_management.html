@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Recursos en Destinos Turísticos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        .hero-bg {
+            background-image: url('https://gestion.pe/resizer/uspwRKs1DiRUwMStvrHmuCsT0AU=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/QYZERP67YJD5JAL6WUPLJYDMQ4.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    <script src="/static/resource_management.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- Navigation -->
+    <nav class="bg-indigo-600 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-lg font-bold">Ruta Perú</a>
+            <div>
+                <a href="/" class="text-indigo-200 hover:text-white ml-4">Inicio</a>
+                <a href="/resource_management" class="text-indigo-200 hover:text-white ml-4">Gestión de Recursos</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="hero-bg text-white py-24 text-center">
+        <h1 class="text-5xl font-bold">Gestión de Recursos en Destinos Turísticos</h1>
+        <p class="mt-4 text-lg">Optimiza los recursos en los destinos turísticos para una mejor experiencia</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-4">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+                <label for="num_items" class="block text-lg font-medium text-gray-700">Número de ítems:</label>
+                <input type="number" id="num_items" min="1" class="mt-1 block w-full bg-gray-100 border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <button onclick="generateItemInputs()" class="mt-2 w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Generar Campos</button>
+            </div>
+            <div id="items_inputs" class="mb-4"></div>
+            <div class="mb-4">
+                <label for="max_weight" class="block text-lg font-medium text-gray-700">Capacidad máxima de la mochila:</label>
+                <input type="number" id="max_weight" min="1" class="mt-1 block w-full bg-gray-100 border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <button onclick="calculateKnapsack()" class="mt-2 w-full bg-indigo-600 text-white py-2 px-4 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Calcular Mejor Combinación</button>
+            </div>
+        </div>
+        <div class="bg-white p-6 mt-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Resultado</h2>
+            <pre id="result" class="bg-gray-100 p-4 rounded-lg"></pre>
+            <img id="evolution_plot" style="display:none;" class="mt-4 w-full rounded-lg shadow-lg">
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-600 p-4 mt-8">
+        <div class="container mx-auto text-center text-white">
+            &copy; 2024 Ruta Perú. Todos los derechos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
